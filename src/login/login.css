@@ -1,0 +1,23 @@
+.container-login {
+    max-width: 30%;    
+    margin: auto;  
+    margin-top: 5%;
+    padding: 3%;
+    text-align: center;  
+}
+
+.textFields {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.loginButton {
+    margin-top: 20px;
+    padding: 4px;    
+}
+
+.button-not-register {
+    margin: 16px;
+    float: right;   
+}

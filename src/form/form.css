@@ -1,0 +1,32 @@
+.container-login {
+    width: 40%;
+    margin: auto;
+    padding: 16px;
+    margin-top: 5%;
+}
+
+.Form-login-logo {
+    width: 128px;
+    height: 128px;
+    top:50%;
+	left:50%;
+    margin:0 0 0 -64px;
+    position: relative;
+}
+.loginButton {
+    margin-top: 20px;
+}
+
+.textFields {
+    display: block;
+    margin: 0 16px;
+    width: 100%;    
+}
+
+
+/* @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .container-login {
+    width: 100%;
+    box-shadow: none;
+}
+}  */
