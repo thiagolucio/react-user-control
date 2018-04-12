@@ -9,6 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 // import { BrowserRouter, Router, Route, Switch } from 'react-router-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Form from './form/Form';
+import Login from './login/Login';
 import List from './list/List';
 
 const muiTheme = getMuiTheme({
@@ -23,7 +24,8 @@ ReactDOM.render(
         <BrowserRouter>
             <App>        
                 <Switch>
-                    <Route exact path="/" component={App} />
+                    <Route path="/" component={App} exact/>
+                    <Route path="/Login" component={Login} />
                     <Route path="/List" component={List} />
                     <Route path="/Form" component={Form} />
                 </Switch>
