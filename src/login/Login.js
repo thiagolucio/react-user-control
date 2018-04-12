@@ -4,8 +4,7 @@ import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import './login.css';
 import logo from '../images/Touch_ID-128.png';
-// import FontIcon from 'material-ui/FontIcon';
-// import logo from '../images/login128-1.png';
+// import { Link } from 'react-router-dom';
 
 
 export default class Login extends Component {

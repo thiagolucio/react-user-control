@@ -6,6 +6,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { pink600, blue500 } from 'material-ui/styles/colors';
 import registerServiceWorker from './registerServiceWorker';
+// import { BrowserRouter, Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Form from './form/Form';
+import List from './list/List';
 
 const muiTheme = getMuiTheme({
     palette: {
@@ -16,7 +20,16 @@ const muiTheme = getMuiTheme({
 
 ReactDOM.render(
     <MuiThemeProvider muiTheme={muiTheme}>
-        <App />
+        <BrowserRouter>
+            <App>        
+                <Switch>
+                    <Route exact path="/" component={App} />
+                    <Route path="/List" component={List} />
+                    <Route path="/Form" component={Form} />
+                </Switch>
+            </App>        
+    </BrowserRouter>
+        
     </MuiThemeProvider>, document.getElementById('root')
 );
 registerServiceWorker();

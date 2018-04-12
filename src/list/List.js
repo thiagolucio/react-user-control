@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
+import './list.css';
+
 import TextField from 'material-ui/TextField';
-// import Subheader from 'material-ui/Subheader';
+import AppBar from 'material-ui/AppBar';
+import FlatButton from 'material-ui/FlatButton';
 import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
-// import FontIcon from 'material-ui/FontIcon';
-import './form.css'; 
+import RaisedButton from 'material-ui/RaisedButton'
 
-
-
-
-export default class Form extends Component {
-    
+export default class List extends Component {
     render() {    
         return (
             <div>
-                <Card className="container-login">
-                                     
+                <AppBar
+                title="Control User App"          
+                iconElementRight={<FlatButton label="Logout" />} 
+                />
+                
+                <Card className="container-login">                                     
                     <form>      
                         <CardTitle title="User Form" subtitle="User Form Register" />
                         <CardText className="body-CardText">
@@ -51,7 +52,7 @@ export default class Form extends Component {
                             <RaisedButton label="Register" fullWidth={true} secondary={true} className="loginButton"/>
                         </CardActions>
                         </form>
-                    </Card>                  
+                    </Card>                
             </div>
         );         
     };
