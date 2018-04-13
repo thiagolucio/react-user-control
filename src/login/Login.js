@@ -5,15 +5,9 @@ import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import './login.css';
 import logo from '../images/Touch_ID-128.png';
-// import { Link } from 'react-router-dom';
-import Form from '../form/Form';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Redirect,
-    withRouter
-} from 'react-router-dom';
+// import { Route, Link } from 'react-router-dom';
+
+
 
 
 export default class Login extends Component {
@@ -27,6 +21,7 @@ export default class Login extends Component {
         };
         console.log(_data) ;
 };
+
 
 
     render() {
@@ -55,12 +50,22 @@ export default class Login extends Component {
                                 floatingLabelText="Password"
                                 type="password"
                             />
-                            <Link to="/Form">Formulario</Link>
-                            <RaisedButton label="Create Account" secondary={true} className="button-not-register" labelStyle={{ fontSize: '12px' }} />
-
-
-
-                            <Route path="/Form" component={Form} />
+            
+                                {/* <RaisedButton
+                                label="Create Account"                                
+                                href="/Form"
+                                target="_self"
+                                secondary={true}
+                                labelStyle={{fontSize: '12px', float: 'right' }}                                                      
+                                /> */}
+                                <RaisedButton
+                                label="Create Account"                                
+                                href="/Form"
+                                target="_self"
+                                secondary={true}
+                                className="button-not-register"
+                                />
+                            
 
                         </CardText>
                         <CardActions>

@@ -14,10 +14,12 @@
 
 .loginButton {
     margin-top: 20px;
-    padding: 4px;    
+    padding: 4px;   
 }
 
 .button-not-register {
-    margin: 16px;
-    float: right;   
+    margin: 16px;   
+    float: right;
+    position: relative;    
+    z-index: 1;   
 }
