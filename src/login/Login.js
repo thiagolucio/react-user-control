@@ -22,8 +22,8 @@ export default class Login extends Component {
         console.log(_data);
         this.setState({
             email: "",
-            password: "" 
-        })
+            password: ""
+        });
 };
 
 

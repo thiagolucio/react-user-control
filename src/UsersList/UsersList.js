@@ -1,11 +1,22 @@
 import React, {Component} from 'react';
 import './UsersList.css';
-import AppBar from 'material-ui/AppBar';
-import {List, ListItem, Subheader, Card, FlatButton} from 'material-ui';
 import Avatar from 'material-ui/Avatar';
 import FontIcon from 'material-ui/FontIcon';
 import FullscreenDialog from 'material-ui-fullscreen-dialog';
-import logo from '../images/user-id-48.png'
+import logo from '../images/user-id-48.png';
+import barLogo from '../images/user-id-128.png';
+import {
+    List,
+    ListItem,
+    Subheader,
+    Card,
+    FlatButton,
+    Toolbar,
+    ToolbarGroup,    
+    ToolbarTitle,
+    RaisedButton,
+    Paper
+} from 'material-ui';
 
 const iconStyles = {
     fontSize: '32px',
@@ -24,10 +35,21 @@ export default class UsersList extends Component {
         
         return (
             <div>
-                <AppBar
-                    title="Control User App"
-                    iconElementRight={<FlatButton label="Logout"/>}
-                />
+                <Paper zDepth={2}>
+                    <Toolbar style={{ background: '#E0E0E0' }}>
+                    <ToolbarGroup firstChild={true}>
+                        <img src={barLogo} alt="logo login" className="barLogo" />
+                        <ToolbarTitle text="User List Control" />
+                    </ToolbarGroup>
+                    <ToolbarGroup>
+                        
+                        <RaisedButton label="Logout" primary={true} />
+                    </ToolbarGroup>
+                    
+                    
+                    </Toolbar>
+                </Paper>    
+                
                 <Card className="container-list">
                     <List>
                         <Subheader><h2>Users Saves List</h2></Subheader>
@@ -45,11 +67,11 @@ export default class UsersList extends Component {
                     open={this.state.open}
                     appBarStyle={{ background: '#880E4F'}}
                     onRequestClose={() => this.setState({ open: false })}
-                    title={'Demo dialog'}
+                    title={'User Details'}
                     style={colorDialogStyles}
                     actionButton={<FlatButton
-                        label='Closed'
-                        onClick={() => this.setState({ open: false })}
+                    label='Close'
+                    onClick={() => this.setState({ open: false })}
                     />}
                 >
                     {/* Content inside here */}

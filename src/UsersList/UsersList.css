@@ -1,7 +1,12 @@
 .container-list {
     max-width: 35%;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 2%;
     padding: 3%;
     text-align: center;
+}
+
+.barLogo {
+    width: auto;
+    height: 48px;
 }
