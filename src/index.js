@@ -20,8 +20,7 @@ ReactDOM.render(
     <MuiThemeProvider muiTheme={muiTheme}>
         <BrowserRouter>
             <App/>        
-    </BrowserRouter>
-        
+    </BrowserRouter>        
     </MuiThemeProvider>, document.getElementById('root')
 );
 registerServiceWorker();

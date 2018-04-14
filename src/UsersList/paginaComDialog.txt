@@ -1,0 +1,78 @@
+import React, {Component} from 'react';
+import './UsersList.css';
+import AppBar from 'material-ui/AppBar';
+import {List, ListItem, Subheader, Card, Dialog, FlatButton} from 'material-ui';
+import Avatar from 'material-ui/Avatar';
+import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
+// import modalInfoUser from '../modalInfoUser/modalInfoUser';
+
+
+export default class UsersList extends Component {
+
+    render() {
+        
+        return (
+            <div>
+                <AppBar
+                    title="Control User App"
+                    iconElementRight={<FlatButton label="Logout"/>}
+                />
+                <Card className="container-list">
+                    <List>
+                        <Subheader><h2>Users Saves List</h2></Subheader>
+                        <ListItem
+                            primaryText="Brendan Lim"
+                            leftAvatar={<Avatar src="images/ok-128.jpg"/>}
+                            rightIcon={<CommunicationChatBubble/>}
+                            onClick={this.handleOpen}
+                        />
+                    </List>                    
+                </Card>
+            </div>
+        );
+    }
+}
+
+class UserDialog extends React.Component {
+    stateDialog = {
+        open: false,
+    };
+
+    handleOpen = () => {
+        this.setState({open: true});
+    };
+
+    handleClose = () => {
+        this.setState({open: false});
+    };
+
+    render() {
+        const actions = [
+            <FlatButton
+                label="Cancel"
+                primary={true}
+                onClick={this.handleClose}
+            />,
+            <FlatButton
+                label="Submit"
+                primary={true}
+                keyboardFocused={true}
+                onClick={this.handleClose}
+            />,
+        ];
+
+        return (
+            <div>
+                <Dialog
+                    title="Dialog With Actions"
+                    actions={actions}
+                    modal={false}
+                    open={this.stateDialog.open}
+                    onRequestClose={this.handleClose}
+                >
+                    The actions in this window were passed in as an array of React objects.
+                </Dialog>
+            </div>
+        );
+    }
+}

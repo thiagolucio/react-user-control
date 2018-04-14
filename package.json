@@ -5,8 +5,10 @@
   "dependencies": {
     "ajv": "^6.4.0",
     "material-ui": "^0.20.0",
+    "material-ui-fullscreen-dialog": "^0.7.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
+    "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
@@ -17,5 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-redux": "^5.0.7"
   }
 }

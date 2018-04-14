@@ -4,20 +4,22 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Login from './login/Login';
 import Form from './form/Form';
-import List from './list/List';
+import FormX from './form/FormX';
+import UserList from './UsersList/UsersList';
 
 
 injectTapEventPlugin();
 
-class App extends Component { 
+class App extends Component {
 
   render() {
     return (
       <div>
         <Switch>
           <Route path="/" component={Login} exact />
-          <Route path="/List" component={List} />
+          <Route path="/UserList" component={UserList} />
           <Route path="/Form" component={Form} />
+          <Route path="/FormX" component={FormX} />          
         </Switch>
       </div>
     );
