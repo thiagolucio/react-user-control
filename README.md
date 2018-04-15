@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <h3>Instructions to run the project</h3>
 
 <h4>First run the Json Server base: json-server --watch db.json --port 3004</h4>
-<br />
+
 <h4>Second run npm install and npm start</h4>
 
 </fieldset>
