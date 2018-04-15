@@ -57,7 +57,14 @@ export default class Form extends Component {
         })
     };
 
-
+//    Canadian Postal Code 
+//    function checkPostal(postal) {
+//     var regex = new RegExp(/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]( )?\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i);
+// OU var regex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
+//     if (regex.test(postal.value))
+//         return true;
+//     else return false;
+// }
 
     render() {
         return (

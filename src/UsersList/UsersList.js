@@ -12,7 +12,7 @@ import {
     Card,
     FlatButton,
     Toolbar,
-    ToolbarGroup,    
+    ToolbarGroup,
     ToolbarTitle,
     RaisedButton,
     Paper
@@ -27,12 +27,39 @@ const colorDialogStyles = {
 };
 
 export default class UsersList extends Component {
-    state = {
-        open: false,
+ 
+    stateModal = {        
+      open: false,
     };
 
+    constructor() {
+        super();
+        this.state = {users: []};
+}
+
+    componentDidMount() {
+        fetch('http://localhost:3004/user')
+            .then(response => response.json())
+            .then(user => {
+                this.setState({ users: user });
+                console.log(user);
+                console.log(user[0].name);
+            });
+    }
+
+//     componentDidMount() {
+//         fetch(urlForUserList(this.props.user))
+//             .then(user => user.json())    
+//             .then(user => {
+//                 this.setState({
+//                     userlist: user
+//                 });
+//                 console.log(user[0].name);
+//     })    
+// }
+
     render() {
-        
+        if(!this.state.users) return <p>Loading...</p>
         return (
             <div>
                 <Paper zDepth={2}>
@@ -42,24 +69,28 @@ export default class UsersList extends Component {
                         <ToolbarTitle text="User List Control" />
                     </ToolbarGroup>
                     <ToolbarGroup>
-                        
                         <RaisedButton label="Logout" primary={true} />
                     </ToolbarGroup>
-                    
-                    
                     </Toolbar>
-                </Paper>    
-                
+                </Paper>
+
                 <Card className="container-list">
+
                     <List>
                         <Subheader><h2>Users Saves List</h2></Subheader>
-                        <ListItem
-                            primaryText="Brendan Lim"
-                            leftAvatar={<Avatar src={logo}/>}
-                            rightIcon={<FontIcon className="material-icons" style={iconStyles}>open_in_browser</FontIcon>}
-                            onClick={() => this.setState({ open: true })}
-                        />
-                    </List>                    
+                        {                         
+                            this.state.users.map(function (user) {
+                                return (
+                                    <ListItem key={user.id}
+                                        primaryText={user.name}
+                                        leftAvatar={<Avatar src={logo} />}
+                                        rightIcon={<FontIcon className="material-icons" style={iconStyles}>open_in_browser</FontIcon>}
+                                        onClick={() => this.stateModal({ open: true })}
+                                    />
+                                );
+                            })
+                        }
+                    </List>
                 </Card>
 
                 {/* Dialog */}
@@ -69,10 +100,7 @@ export default class UsersList extends Component {
                     onRequestClose={() => this.setState({ open: false })}
                     title={'User Details'}
                     style={colorDialogStyles}
-                    actionButton={<FlatButton
-                    label='Close'
-                    onClick={() => this.setState({ open: false })}
-                    />}
+                    actionButton={<FlatButton label='Close' onClick={() => this.setState({ open: false })}/>}
                 >
                     {/* Content inside here */}
                 </FullscreenDialog>

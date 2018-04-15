@@ -1,0 +1,30 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Thiago",
+      "surname": "Lucio Bittencourt Thomaz da Silva",
+      "email": "thiagolucio@gmail.com",
+      "password": "123456",
+      "phone": "123-456-7890",
+      "address": "4583 Hudson St.",
+      "city": "Vancouver",
+      "postCode": "m6k1s4",
+      "country": "Canada",
+      "comment": "This is the first User Save in Json"
+    },
+    {
+      "id": 2,
+      "name": "Raquel",
+      "surname": "Gouvea Lucio Bittencourt",
+      "email": "welraquel@gmail.com",
+      "password": "123456",
+      "phone": "123-456-7890",
+      "address": "4583 Hudson St.",
+      "city": "Vancouver",
+      "postCode": "m6k1s4",
+      "country": "Canada",
+      "comment": "This is the second User Save in Json"
+    }
+  ]
+}

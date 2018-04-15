@@ -2,16 +2,34 @@
 import React, { Component } from 'react';
 import './login.css';
 import logo from '../images/Touch_ID-128.png';
-import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import FontIcon from 'material-ui/FontIcon';
+import {
+    Card,
+    CardActions,
+    CardTitle,
+    CardText,
+    FlatButton,
+    TextField,
+    RaisedButton
+} from 'material-ui';
+
 
 
 export default class Login extends Component {
+
+
     state = {
         email: "",
         password: ""
     }
+
+
+    componentDidMount() {
+        fetch('http://localhost:3004/user');
+        
+    }
+
+
     _sendLogin(event) {
         event.preventDefault();
         console.log('Login data is sent');
@@ -51,16 +69,22 @@ export default class Login extends Component {
                                 hintText="Your Password ?"
                                 errorText="This field is required"
                                 floatingLabelText="Password"
-                                type="password"
-                            /> 
-                            <RaisedButton
-                            label="Create Account"                                
+                                type="password"                                
+                        /> 
+                        
+
+
+                        <FlatButton
+                            label="Register"                            
                             href="/Form"
                             target="_self"
-                            secondary={true}
+                            primary={true}
                             className="button-not-register"
                             labelStyle={{ textTransform: 'capitalize' }}
+                            icon={<FontIcon className="material-icons">person_add</FontIcon>}
                         />
+                        
+
                         </CardText>
                         <CardActions>
                             <RaisedButton type="submit" label="ENTER" fullWidth={true} primary={true} className="loginButton" labelStyle={{ fontSize: '18px' }}/>
