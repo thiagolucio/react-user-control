@@ -26,5 +26,17 @@
       "country": "Canada",
       "comment": "This is the second User Save in Json"
     }
+  ],
+  "login": [
+    {
+      "id": 1,
+      "username": "thiago",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "username": "Raquel",
+      "password": "123456"
+    }
   ]
 }

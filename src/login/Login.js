@@ -17,32 +17,47 @@ import {
 
 export default class Login extends Component {
 
-
-    state = {
-        email: "",
-        password: ""
+    constructor() {
+        super();
+        this.state = {
+            login: "",
+            password: "",
+            msg: ""
+        }
     }
 
 
-    componentDidMount() {
-        fetch('http://localhost:3004/user');
-        
-    }
 
 
     _sendLogin(event) {
         event.preventDefault();
-        console.log('Login data is sent');
-        var _data = {
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value
+
+        const requestInfo = {
+            method: 'POST',
+            body: JSON.stringify({ username: this.username.value, password: this.password.value }),
+            headers: new Headers({
+                'Content-type':'application/json'
+            })
         };
-        console.log(_data);
-        this.setState({
-            email: "",
-            password: ""
-        });
-};
+
+        fetch('http://localhost:3004/login', requestInfo)
+            .then(response => {
+                if (response === "") {
+                    return ({ msg: 'This field is required' });
+                };
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('We have a problem with your Login')
+            }
+            })
+            .then(token => {
+                console.log(token);
+            })
+            .catch(error => {
+            this.setState({msg:error.message})
+        })
+ };
 
 
     render() {
@@ -52,28 +67,28 @@ export default class Login extends Component {
                     <form method="POST" onSubmit={(event) => this._sendLogin(event)}>
                         <CardTitle title="LOGIN" subtitle="Please Enter your account to login" />
                         <CardText className="body-CardText">
-                            <TextField
-                                id="email"    
-                                fullWidth={true}    
-                                className="textFields"
-                                hintText="your email ?"
-                                errorText="This field is required"
-                                floatingLabelText="Email"
-                                type="email"
+                        <TextField                            
+                            id="username"
+                            fullWidth={true}    
+                            className="textFields"
+                            hintText="your username ?"
+                            errorText={this.state.msg}
+                            floatingLabelText="Username"
+                            type="text"                            
+                            ref={(input) => this.username = input}
                             />
                             <br/>
-                            <TextField
-                                id="password"    
-                                fullWidth={true}    
-                                className="textFields"
-                                hintText="Your Password ?"
-                                errorText="This field is required"
-                                floatingLabelText="Password"
-                                type="password"                                
-                        /> 
+                        <TextField                            
+                            id="password"
+                            fullWidth={true}    
+                            className="textFields"
+                            hintText="Your Password ?"
+                            errorText="This field is required"
+                            floatingLabelText="Password"
+                            type="password"                           
+                            ref={(input) => this.password = input}
+                        />
                         
-
-
                         <FlatButton
                             label="Register"                            
                             href="/Form"

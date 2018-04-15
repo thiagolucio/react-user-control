@@ -28,14 +28,13 @@ const colorDialogStyles = {
 
 export default class UsersList extends Component {
  
-    stateModal = {        
-      open: false,
-    };
-
-    constructor() {
+    constructor() {        
         super();
-        this.state = {users: []};
-}
+        this.state = { users: [] };
+    }
+    stateModal = {
+        open: false,
+    };    
 
     componentDidMount() {
         fetch('http://localhost:3004/user')
