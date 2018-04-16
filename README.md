@@ -1,5 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+<fieldset>
+<h3>Instructions to run the project</h3>
+  <h3>Install JSON Server : npm install -g json-server</h3>
+<h3>First run the Json Server base: json-server --watch db.json --port 3004</h3>
+
+<h4>Second run npm install and npm start</h4>
+
+</fieldset>
+<br /><br /><br /><br /><br />
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
