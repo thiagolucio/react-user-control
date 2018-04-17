@@ -26,9 +26,6 @@ export default class Login extends Component {
         }
     }
 
-
-
-
     _sendLogin(event) {
         event.preventDefault();
 
